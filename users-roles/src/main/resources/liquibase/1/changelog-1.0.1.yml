@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Roles table
+      author: Osman Rustamli
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of role
+              - column:
+                  name: name
+                  type: varchar(128)
+              - column:
+                  name: creation_time
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP

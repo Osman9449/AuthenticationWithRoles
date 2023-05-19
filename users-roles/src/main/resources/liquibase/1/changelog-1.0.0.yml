@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Users table
+      author: Osman Rustamli
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of lessons
+              - column:
+                  name: full_name
+                  type: varchar(128)
+              - column:
+                  name: user_name
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(256)
+
+              - column:
+                  name: creation_time
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: update_time
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP

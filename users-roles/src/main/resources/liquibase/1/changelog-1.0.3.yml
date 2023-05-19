@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add update_time column to roles table
+      author: Osman Rustamli
+      changes:
+        - addColumn:
+            tableName: roles
+            columns:
+              - column:
+                 name: update_time
+                 type: timestamp
+                 defaultValueComputed: CURRENT_TIMESTAMP
